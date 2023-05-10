@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        border: 5px solid red;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #time,
+      #warning,
+      #age,
+      #under-18,
+      #over-18,
+      #countdown {
+        color: white;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      input[type="radio"] {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="countdown"></div>
+      <div id="time"></div>
+      <div id="warning">
+        MUỐN TẢI VỀ THÌ BẤM SAO ĐÚNG THÌ ĐƯỢC TẢI 
+        TAO BAO NHIÊU TUÔI.
+      </div>
+      <div id="age">
+        <label for="under-18">
+          <input type="radio" name="age" id="under-18" value="<18" />
+          Dưới 18 (ĐÁP ÁN ĐÚNG ) 
+        </label>
+        <label for="over-18">
+          <input type="radio" name="age" id="over-18" value=">=18" />
+          Trên 18+ ( ĐÁP ÁN SAI ) 
+        </label>
+      </div>
+    </div>
+    <script>
+      function updateTime() {
+        const timeElement = document.querySelector("#time");
+        const now = new Date();
+        timeElement.textContent = now.toLocaleString();
+      }
+      setInterval(updateTime, 1000);
+
+      const ageInputs = document.querySelectorAll("input[name='age']");
+      ageInputs.forEach((input) => {
+        input.addEventListener("change", (event) => {
+          if (event.target.value === "<18") {
+            const countdownElement = document.querySelector("#countdown");
+            countdownElement.textContent = "VUI LÒNG RỜI KHỎI TRANG WEB";
+          } else if (event.target.value === ">=18") {
+            let countdown = 5;
+            const countdownElement = document.querySelector("#countdown");
+            countdownElement.textContent = `Đang chuyển hướng trong ${countdown}s`;
+const countdownInterval = setInterval(() => {
+  countdown -= 1;
+  countdownElement.textContent = `Đang chuyển hướng trong ${countdown}s`;
+  if (countdown === 0) {
+    clearInterval(countdownInterval);
+    window.location.href =
+      "https://mega.nz/file/rvwGgSBB#PTxeukhsV25rNjRmcA06NKNO4yYnWM-GLry6546F9E8";
+  }
+}, 1000);
+}
+        });
+      });
+    </script>
+  </body>
+</html>
