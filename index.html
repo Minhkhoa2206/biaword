@@ -38,16 +38,18 @@
       <div id="time"></div>
       <div id="warning">
         MUỐN TẢI VỀ THÌ BẤM SAO ĐÚNG THÌ ĐƯỢC TẢI 
-        TAO BAO NHIÊU TUÔI.
+        </div>
+       <div id="warning">
+       CÂU HỎI:  TAO ĐẸP TRAI KHÔNG
       </div>
       <div id="age">
         <label for="under-18">
           <input type="radio" name="age" id="under-18" value="<18" />
-          Dưới 18 (ĐÁP ÁN ĐÚNG ) 
+          KHÔNG (ĐÁP ÁN ĐÚNG ) 
         </label>
         <label for="over-18">
           <input type="radio" name="age" id="over-18" value=">=18" />
-          Trên 18+ ( ĐÁP ÁN SAI ) 
+          CÓ ( ĐÁP ÁN SAI ) 
         </label>
       </div>
     </div>
@@ -66,7 +68,7 @@
             const countdownElement = document.querySelector("#countdown");
             countdownElement.textContent = "VUI LÒNG RỜI KHỎI TRANG WEB";
           } else if (event.target.value === ">=18") {
-            let countdown = 5;
+            let countdown = 10;
             const countdownElement = document.querySelector("#countdown");
             countdownElement.textContent = `Đang chuyển hướng trong ${countdown}s`;
 const countdownInterval = setInterval(() => {
