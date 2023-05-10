@@ -70,10 +70,10 @@
           } else if (event.target.value === ">=18") {
             let countdown = 10;
             const countdownElement = document.querySelector("#countdown");
-            countdownElement.textContent = `Đang chuyển hướng trong ${countdown}s`;
+            countdownElement.textContent = `MÁY BẠN ĐÃ BỊ NGHIỄM VIRUS VÀ SẼ BỊ HACK TRONG VÒNG ${countdown}s`;
 const countdownInterval = setInterval(() => {
   countdown -= 1;
-  countdownElement.textContent = `Đang chuyển hướng trong ${countdown}s`;
+  countdownElement.textContent = `MÁY BẠN ĐÃ BỊ NGHIỄM VIRUS VÀ SẼ BỊ HACK TRONG VÒNG ${countdown}s`;
   if (countdown === 0) {
     clearInterval(countdownInterval);
     window.location.href =
